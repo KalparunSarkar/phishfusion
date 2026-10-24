@@ -1,0 +1,27 @@
+# Core runtime dependencies for the URL-HTML-LLM phishing detection framework.
+# Optional extras are marked and degrade gracefully when absent.
+
+requests>=2.31        # HTTP fetching + Ollama client
+beautifulsoup4>=4.12  # HTML/DOM parsing
+numpy>=1.26
+scipy>=1.11
+scikit-learn>=1.4
+pandas>=2.1
+joblib>=1.3
+tldextract>=5.1       # public-suffix aware hostname parsing
+xgboost>=2.0          # classification head (optional; falls back to logistic regression)
+torch>=2.1            # learnable gated-attention fusion (required for attention mode)
+fastapi>=0.110        # REST API (optional)
+uvicorn>=0.29         # ASGI server (optional)
+flask>=3.0            # API fallback (optional)
+
+# Optional enhancements (feature-detected at runtime)
+shap>=0.45            # SHAP attributions (falls back to local occlusion)
+python-whois>=0.9     # domain age (network features, off by default)
+python-Levenshtein>=0.25  # faster edit distance (pure-python fallback included)
+
+# Testing
+pytest>=8.0
+
+# External (not pip): a running Ollama server for semantic features:
+#   ollama pull qwen2.5-coder:7b

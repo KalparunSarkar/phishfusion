@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Datasets (large; regenerate with `python pipeline.py prepare`)
+data/
+*.csv
+!artifacts/*.csv
+
+# Trained model binaries (regenerate with `python pipeline.py demo --save`)
+artifacts/*.model
+artifacts/*.model.net.pt
+artifacts/*.meta
+artifacts/*.pt
+artifacts/*.pkl
+artifacts/*.joblib
+
+# Logs
+logs/
+*.log
+
+# macOS
+.DS_Store
+
+# Editor / OS
+.idea/
+.vscode/
